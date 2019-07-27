@@ -1,12 +1,8 @@
 # https://dev.to/avatsaev/create-efficient-angular-docker-images-with-multi-stage-builds-1f3n
 
-# Set Global arg
-ARG ENV=development
-
 # STAGE 1: Build
 FROM node:12.5.0-alpine as builder
 
-# For using the global arg in this build stage
 ARG ENV
 
 WORKDIR /tmp
@@ -17,21 +13,15 @@ RUN npm ci
 
 ADD . .
 
-RUN npm run build:ssr:$ENV
+RUN npm run build -- --configuration=$ENV --output-path=dist
 
-# STAGE 2: Run the server
-FROM node:12.5.0-alpine
+# STAGE 2: Run
+FROM nginx:1.17.2-alpine
 
-# For using the global arg in this build stage
-ARG ENV
-ENV ENV=$ENV
-
-# From "builder" stage, copy over dist
-WORKDIR /tmp
-
-ADD package.json ./package.json
-COPY --from=builder /tmp/dist /tmp/dist
+# From "builder" stage copy over the artifacts in dist folder to default nginx public folder
+COPY --from=builder /tmp/dist /usr/share/nginx/html
+ADD nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
-ENTRYPOINT npm run serve:ssr
+CMD ["nginx", "-g", "daemon off;"]
