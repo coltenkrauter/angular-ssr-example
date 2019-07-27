@@ -25,6 +25,8 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
+              "src/robots.txt",
+              "src/sitemap.xml",
               "src/assets"
             ],
             "styles": [
@@ -38,6 +40,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.production.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.production.txt"
                 }
               ],
               "optimization": true,
@@ -62,6 +68,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.certification.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.certification.txt"
                 }
               ],
               "optimization": true,
@@ -86,6 +96,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.development.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.development.txt"
                 }
               ],
               "optimization": true,
@@ -139,6 +153,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
+              "src/robots.txt",
+              "src/sitemap.xml",
               "src/assets"
             ],
             "styles": [
@@ -191,6 +207,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.production.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.production.txt"
                 }
               ],
               "sourceMap": false,
@@ -204,6 +224,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.certification.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.certification.txt"
                 }
               ],
               "sourceMap": false,
@@ -217,6 +241,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.development.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.development.txt"
                 }
               ],
               "sourceMap": false,
