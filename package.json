@@ -10,8 +10,12 @@
     "e2e": "ng e2e",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
-    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --configuration=production && ng run angular-ssr-example:server:production --bundleDependencies all"
+    "build:ssr:production": "npm run build:client-and-server-bundles:production && npm run compile:server",
+    "build:ssr:certification": "npm run build:client-and-server-bundles:certification && npm run compile:server",
+    "build:ssr:development": "npm run build:client-and-server-bundles:development && npm run compile:server",
+    "build:client-and-server-bundles:production": "ng build --configuration=production && ng run angular-ssr-example:server:production --bundleDependencies all",
+    "build:client-and-server-bundles:certification": "ng build --configuration=certification && ng run angular-ssr-example:server:certification --bundleDependencies all",
+    "build:client-and-server-bundles:development": "ng build --configuration=development && ng run angular-ssr-example:server:development --bundleDependencies all"
   },
   "private": true,
   "dependencies": {
