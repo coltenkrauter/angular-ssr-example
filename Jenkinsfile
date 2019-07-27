@@ -9,7 +9,8 @@ def main() {
 }
 
 def deploy() {
-  echo "head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo ''"
+  password = sh(script: "head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo ''", returnStdout: true ]).trim()
+  echo password
     // ansiblePlaybook(
     //     playbook: "${ANSIBLE_REPO}/deploy_specialty_songs.yaml",
     //     inventory: "${ANSIBLE_REPO}/inventories/specialty_songs/${ENVIRONMENT}/hosts",
