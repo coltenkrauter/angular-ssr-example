@@ -48,6 +48,7 @@ app.get('*.*', express.static(DIST_FOLDER, {
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
   res.render('index', { req });
+  logRequest(req, res);
 });
 
 // Start up the Node server
@@ -55,3 +56,17 @@ app.listen(PORT, () => {
   console.log(`Node Express server listening on http://localhost:${PORT}`);
   console.log(`Environment: ${process.env.ENV}`);
 });
+
+// Helper functions
+function logRequest(req, res) {
+  let host = req.client._peername.address.split(':').pop()
+  let method = req.method;
+  let url = req.url;
+  let userAgent = req.headers["user-agent"];
+  let dt = new Date();
+  let statusCode = res.statusCode;
+  let HTTPVersion = req.httpVersion;
+  let referrer =  req.headers.referrer || req.headers.referer || "-";
+
+  console.log(`${host} - - [${dt.toISOString()}] "${method} ${url} HTTP/${HTTPVersion}" ${statusCode} "${referrer}" "${userAgent}"`);
+}
