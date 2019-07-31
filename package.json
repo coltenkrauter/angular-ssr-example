@@ -10,12 +10,12 @@
     "e2e": "ng e2e",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
-    "build:ssr:production": "npm run build:client-and-server-bundles:production && npm run compile:server",
-    "build:ssr:certification": "npm run build:client-and-server-bundles:certification && npm run compile:server",
-    "build:ssr:development": "npm run build:client-and-server-bundles:development && npm run compile:server",
-    "build:client-and-server-bundles:production": "ng build --configuration=production && ng run angular-ssr-example:server:production --bundleDependencies all",
-    "build:client-and-server-bundles:certification": "ng build --configuration=certification && ng run angular-ssr-example:server:certification --bundleDependencies all",
-    "build:client-and-server-bundles:development": "ng build --configuration=development && ng run angular-ssr-example:server:development --bundleDependencies all"
+    "build:ssr:prod": "npm run build:client-and-server-bundles:prod && npm run compile:server",
+    "build:ssr:cert": "npm run build:client-and-server-bundles:cert && npm run compile:server",
+    "build:ssr:dev": "npm run build:client-and-server-bundles:dev && npm run compile:server",
+    "build:client-and-server-bundles:prod": "ng build --configuration=prod && ng run angular-ssr-example:server:prod --bundleDependencies all",
+    "build:client-and-server-bundles:cert": "ng build --configuration=cert && ng run angular-ssr-example:server:cert --bundleDependencies all",
+    "build:client-and-server-bundles:dev": "ng build --configuration=dev && ng run angular-ssr-example:server:dev --bundleDependencies all"
   },
   "private": true,
   "dependencies": {

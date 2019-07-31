@@ -3,7 +3,7 @@
 # STAGE 1: Build
 FROM node:12.5.0-alpine as builder
 
-ARG ENV
+ARG ENV=dev
 
 WORKDIR /tmp
 ADD package.json ./package.json
