@@ -124,7 +124,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-ssr-example:build"
+            "browserTarget": "angular-ssr-example:build",
+            "port": 4000,
+            "host": "0.0.0.0"
           },
           "configurations": {
             "prod": {
