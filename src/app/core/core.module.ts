@@ -18,8 +18,6 @@ import {
 
 import { RouterModule } from '@angular/router';
 
-import 'hammerjs';
-
 import { EnsureModuleLoadedOnceGuard } from './ensure-module-loaded-once.guard';
  
 var modules = [
