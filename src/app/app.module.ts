@@ -4,13 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { CoreModule } from './core';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    AppRoutingModule
+    CoreModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
