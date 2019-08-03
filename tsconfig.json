@@ -11,8 +11,9 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "@core": ["src/app/core"],
-      "@app/*": ["src/app/*"],
+      "@core": ["src/app/core/core.module"],
+      "@app": ["src/app/app.component"],
+      "@router": ["src/app/app-routing.module"],
       "@assets/*": ["src/assets/*"],
       "@environments/*": ["src/environments/*"],
       "@components/*": ["src/app/components/*"],

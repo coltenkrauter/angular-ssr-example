@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { environment } from '../environments/environment';
+import { Component } from "@angular/core";
+import { environment } from "../environments/environment";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.sass"]
 })
 export class AppComponent {
-  title = 'Angular SSR Example';
+  title = "Angular SSR Example";
   production = environment.production;
 }
