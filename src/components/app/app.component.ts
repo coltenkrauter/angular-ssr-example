@@ -7,6 +7,6 @@ import { environment } from "@environments/environment";
   styleUrls: ["./app.component.sass"]
 })
 export class AppComponent {
+  env = environment;
   title = "Angular SSR Example";
-  production = environment.production;
 }
