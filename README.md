@@ -24,3 +24,7 @@ docker run -p 8081:80 angular-ssr-example:latest-non-ssr
 ng s # This will run a local environment
 # ng s --configuration=dev
 ```
+
+## Responsive images
+
+I generate responsive images using [Responsive Breakpoints](https://www.responsivebreakpoints.com/) and I use webp image format with jpg as the fallback.
