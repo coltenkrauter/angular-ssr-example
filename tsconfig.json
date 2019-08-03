@@ -12,7 +12,7 @@
     "importHelpers": true,
     "paths": {
       "@app": ["src/app.module"],
-      "@app-server": ["src/app.server.module"],
+      "@appserver": ["src/app.server.module"],
       "@core": ["src/core/core.module"],
       "@router": ["src/app-routing.module"],
       "@assets/*": ["src/assets/*"],

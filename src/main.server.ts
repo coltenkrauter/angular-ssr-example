@@ -6,7 +6,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-export { AppServerModule } from "@app-server";
+export { AppServerModule } from "@appserver";
 export { ngExpressEngine } from "@nguniversal/express-engine";
 export { provideModuleMap } from "@nguniversal/module-map-ngfactory-loader";
 
