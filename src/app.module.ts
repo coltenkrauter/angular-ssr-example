@@ -2,7 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
 import { AppRoutingModule } from "@router";
-import { AppComponent } from "@app";
+import { AppComponent } from "@components/app";
 
 import { CoreModule } from "@core";
 

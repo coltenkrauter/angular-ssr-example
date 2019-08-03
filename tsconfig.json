@@ -11,15 +11,16 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "@core": ["src/app/core/core.module"],
-      "@app": ["src/app/app.component"],
-      "@router": ["src/app/app-routing.module"],
+      "@app": ["src/app.module"],
+      "@app.server": ["src/app.server.module"],
+      "@core": ["src/core/core.module"],
+      "@router": ["src/app-routing.module"],
       "@assets/*": ["src/assets/*"],
       "@environments/*": ["src/environments/*"],
-      "@components/*": ["src/app/components/*"],
-      "@services/*": ["src/app/services/*"],
-      "@interceptors/*": ["src/app/interceptors/*"],
-      "@pipes/*": ["src/app/pipes/*"]
+      "@components/*": ["src/components/*"],
+      "@services/*": ["src/services/*"],
+      "@interceptors/*": ["src/interceptors/*"],
+      "@pipes/*": ["src/pipes/*"]
     },
     "target": "es2015",
     "typeRoots": [
