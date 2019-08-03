@@ -1,10 +1,10 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
+import { CoreModule } from "@core"; // Import libraries
 import { AppRoutingModule } from "@router";
 import { AppComponent } from "@components/app";
 
-import { CoreModule } from "@core";
 
 @NgModule({
   declarations: [
