@@ -5,6 +5,7 @@ import { CoreModule } from "@core"; // Import libraries
 import { AppRoutingModule } from "@router";
 import { AppComponent } from "@components/app";
 
+import { GaugeModule } from "angular-gauge";
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { AppComponent } from "@components/app";
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),
+    GaugeModule.forRoot(),
     CoreModule,
     AppRoutingModule,
   ],

@@ -3,6 +3,19 @@
 </mat-toolbar>
 
 <mat-card class="nav-card">
+  <mwl-gauge 
+    [max]="55" 
+    [dialStartAngle]="180" 
+    [dialEndAngle]="0" 
+    [label]="dialLabel" 
+    [value]="99" 
+    [animated]="true" 
+    [animationDuration]=".3">
+    Loading gauge...
+  </mwl-gauge>
+</mat-card>
+
+<mat-card class="nav-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Compare SSR vs NON-SSR</mat-card-title>
