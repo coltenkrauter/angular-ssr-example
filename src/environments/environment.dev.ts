@@ -1,6 +1,7 @@
 export const environment = {
   production: false,
   name: "dev",
+  baseURL: "https://dev.angular-non-ssr-example.coltenkrauter.com",
   title: "NON-SSR Example",
   linkText: "SSR Example",
   linkURL: "https://dev.angular-ssr-example.coltenkrauter.com",

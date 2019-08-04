@@ -10,10 +10,9 @@ import { environment } from "@environments/environment";
   styleUrls: ["./app.component.sass"]
 })
 export class AppComponent {
-  currentURL: string = `${window.location.protocol}//${window.location.hostname}`;
   env = environment;
   title: string = "Angular SSR Example";
-  pageSpeedURL: string = `https://developers.google.com/speed/pagespeed/insights/?url=${this.currentURL}`;
+  pageSpeedURL: string = `https://developers.google.com/speed/pagespeed/insights/?url=${this.env.baseURL}`;
 
   constructor(
     private http: HttpClient,
@@ -22,7 +21,7 @@ export class AppComponent {
 
   async getPageSpeed() {
     try {
-      let pageSpeedAPIURL: string = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${this.currentURL}&strategy=mobile`;
+      let pageSpeedAPIURL: string = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${this.env.baseURL}&strategy=mobile`;
       
       let response = await this.http.get<any>(pageSpeedAPIURL).toPromise();
       console.log(response.lighthouseResult.categories.performance.score);
