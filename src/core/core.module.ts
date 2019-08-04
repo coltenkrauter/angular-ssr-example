@@ -17,10 +17,9 @@ import {
 //import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 import { RouterModule } from '@angular/router';
-
 import { EnsureModuleLoadedOnceGuard } from './ensure-module-loaded-once.guard';
- 
-var modules = [
+
+let modules = [
   BrowserAnimationsModule, FormsModule, HttpClientModule, MatBadgeModule,
   MatButtonModule, MatCardModule, MatCheckboxModule, MatRippleModule, MatTabsModule, MatDialogModule,
   MatDividerModule, MatExpansionModule, MatFormFieldModule, MatButtonToggleModule, MatGridListModule,

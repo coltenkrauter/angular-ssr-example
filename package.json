@@ -13,9 +13,9 @@
     "build:ssr:prod": "npm run build:client-and-server-bundles:prod && npm run compile:server",
     "build:ssr:cert": "npm run build:client-and-server-bundles:cert && npm run compile:server",
     "build:ssr:dev": "npm run build:client-and-server-bundles:dev && npm run compile:server",
-    "build:client-and-server-bundles:prod": "ng build --configuration=prod && ng run angular-ssr-example:server:prod --bundleDependencies all",
-    "build:client-and-server-bundles:cert": "ng build --configuration=cert && ng run angular-ssr-example:server:cert --bundleDependencies all",
-    "build:client-and-server-bundles:dev": "ng build --configuration=dev && ng run angular-ssr-example:server:dev --bundleDependencies all"
+    "build:client-and-server-bundles:prod-ssr": "ng build --configuration=prod-ssr && ng run angular-ssr-example:server:prod-ssr --bundleDependencies all",
+    "build:client-and-server-bundles:cert-ssr": "ng build --configuration=cert-ssr && ng run angular-ssr-example:server:cert-ssr --bundleDependencies all",
+    "build:client-and-server-bundles:dev-ssr": "ng build --configuration=dev-ssr && ng run angular-ssr-example:server:dev-ssr --bundleDependencies all"
   },
   "private": true,
   "dependencies": {
