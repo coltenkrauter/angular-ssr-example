@@ -1,64 +1,111 @@
+<div 
+  *ngIf="!env.production"
+  [className]="'env-indicator ' + env.name">
+  {{ env.name }}
+</div>
+
 <mat-toolbar>
-  <span>Angular SSR Example</span>
+  <span>Angular {{ env.title }}</span>
 </mat-toolbar>
 
-<mat-card class="nav-card">
-  <mwl-gauge 
-    [max]="55" 
-    [dialStartAngle]="180" 
-    [dialEndAngle]="0" 
-    [label]="dialLabel" 
-    [value]="99" 
-    [animated]="true" 
-    [animationDuration]=".3">
-    Loading gauge...
-  </mwl-gauge>
-</mat-card>
-
-<mat-card class="nav-card">
+<mat-card class="card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Compare SSR vs NON-SSR</mat-card-title>
-    <mat-card-subtitle>This is a responsive image to cause a little more stress while loading this page.</mat-card-subtitle>
+    <mat-card-title>PageSpeed Insights Score</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
   </mat-card-header>
-  <a href="https://unsplash.com/photos/qVECbGwu4rw">
+  <mat-card-content>
+    <mwl-gauge 
+      [max]="55" 
+      [dialStartAngle]="180" 
+      [dialEndAngle]="0" 
+      label="dialLabel" 
+      [value]="99" 
+      [animated]="true" 
+      [animationDuration]=".3">
+      Loading gauge...
+    </mwl-gauge>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button
+      class="card--button"
+      [href]="env.linkURL">
+      {{ env.linkText }}
+    </a>
+    <a mat-button
+      class="card--button"
+      [href]="pageSpeedURL">
+      PageSpeed Insights
+    </a>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Responsive Image</mat-card-title>
+    <mat-card-subtitle>This is a responsive image intended to cause a little more load time while loading this page.</mat-card-subtitle>
+  </mat-card-header>
+  
     <picture>
-      <img
-      sizes="(max-width: 2100px) 100vw, 2100px"
-      srcset="
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_200.webp 200w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_436.webp 436w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_614.webp 614w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_755.webp 755w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_909.webp 909w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1030.webp 1030w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1142.webp 1142w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1260.webp 1260w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1383.webp 1383w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1497.webp 1497w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1602.webp 1602w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1708.webp 1708w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1843.webp 1843w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1953.webp 1953w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_2053.webp 2053w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_2098.webp 2098w,
-      ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_2100.webp 2100w"
-      src="../../assets/images/elephant/elephant_d6vmnu_c_scale,w_2100.webp"
-      alt="Photo by mingwei dong on Unsplash"
-      mat-card-image>
+      <img mat-card-image
+        class="card--image"
+        sizes="(max-width: 2100px) 100vw, 2100px"
+        srcset="
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_200.webp 200w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_436.webp 436w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_614.webp 614w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_755.webp 755w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_909.webp 909w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1030.webp 1030w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1142.webp 1142w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1260.webp 1260w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1383.webp 1383w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1497.webp 1497w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1602.webp 1602w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1708.webp 1708w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1843.webp 1843w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_1953.webp 1953w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_2053.webp 2053w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_2098.webp 2098w,
+        ../../assets/images/elephant/elephant_d6vmnu_c_scale,w_2100.webp 2100w"
+        src="../../assets/images/elephant/elephant_d6vmnu_c_scale,w_2100.webp"
+        alt="Photo by mingwei dong on Unsplash">
     </picture>
-  </a>
   
   <mat-card-content>
-    <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@dongmingwei?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from mingwei dong"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">mingwei dong</span></a>
+    <a 
+      style="
+        background-color: black;
+        border-radius: 3px
+        color: white;
+        display: inline-block;
+        font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, 'Segoe UI', Arial, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1.2;
+        padding: 4px 6px;
+        text-decoration: none;
+      " 
+      href="https://unsplash.com/@dongmingwei?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      title="Download free do whatever you want high-resolution photos from mingwei dong">
+      <span style="display:inline-block;padding:2px 3px">
+        <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" 
+        viewBox="0 0 32 32">
+          <title>unsplash-logo</title>
+          <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
+        </svg>
+      </span>
+      <span style="display:inline-block;padding:2px 3px">mingwei dong</span>
+    </a>
 
     <p>
       The African elephant is a genus comprising two living elephant species, the African bush elephant and the smaller African forest elephant. Loxodonta is one of two existing genera of the family Elephantidae. The name refers to the lozenge-shaped enamel of their molar teeth. 
     </p>
   </mat-card-content>
-  <mat-card-actions>
-    <a [href]="env.ssrURL" mat-button>Example with SSR</a>
-    <a [href]="env.nonSSRURL" mat-button>Example without SSR</a>
-  </mat-card-actions>
 </mat-card>
 <router-outlet></router-outlet>

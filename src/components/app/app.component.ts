@@ -1,4 +1,7 @@
 import { Component } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material';
+
 import { environment } from "@environments/environment";
 
 @Component({
@@ -7,6 +10,24 @@ import { environment } from "@environments/environment";
   styleUrls: ["./app.component.sass"]
 })
 export class AppComponent {
+  currentURL: string = `${window.location.protocol}//${window.location.hostname}`;
   env = environment;
-  title = "Angular SSR Example";
+  title: string = "Angular SSR Example";
+  pageSpeedURL: string = `https://developers.google.com/speed/pagespeed/insights/?url=${this.currentURL}`;
+
+  constructor(
+    private http: HttpClient,
+    public snackBar: MatSnackBar,
+  ) {}
+
+  async getPageSpeed() {
+    try {
+      let pageSpeedAPIURL: string = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${this.currentURL}&strategy=mobile`;
+      
+      let response = await this.http.get<any>(pageSpeedAPIURL).toPromise();
+      console.log(response.lighthouseResult.categories.performance.score);
+    } catch (exception) {
+      console.log(exception);
+    }
+  }
 }
