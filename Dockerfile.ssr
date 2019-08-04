@@ -1,7 +1,7 @@
 # https://dev.to/avatsaev/create-efficient-angular-docker-images-with-multi-stage-builds-1f3n
 
 # Set Global arg
-ARG ENV=development
+ARG ENV=dev
 
 # STAGE 1: Build
 FROM node:12.5.0-alpine as builder

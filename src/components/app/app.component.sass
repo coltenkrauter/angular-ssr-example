@@ -1,0 +1,47 @@
+.env-indicator
+  background: gray
+  border-radius: 2px
+  -webkit-border-radius: 2px
+  top: 12px
+  color: white
+  right: 12px
+  padding: 12px
+  position: fixed
+  text-transform: uppercase
+.env-indicator.local
+  background: #e03636
+  color: white
+.env-indicator.dev
+  background: #31aaf3
+  color: white
+.env-indicator.cert
+  background: #37b779
+  color: white
+
+.card
+  margin: 20px
+.card .card--button
+  text-transform: uppercase
+.card .card--image
+  margin-top: auto
+  
+mwl-gauge
+  width: 150px
+  height: 150px
+  display: block
+  padding: 10px
+  border: solid 1px silver
+  margin: auto
+mwl-gauge > .gauge > .dial
+  stroke: #eee
+  stroke-width: 2
+  fill: rgba(0,0,0,0)
+mwl-gauge > .gauge > .value
+  stroke: rgb(47, 227, 255)
+  stroke-width: 2
+  fill: rgba(0,0,0,0)
+mwl-gauge > .gauge > .value-text
+  fill: rgb(47, 227, 255)
+  font-family: sans-serif
+  font-weight: bold
+  font-size: 1em

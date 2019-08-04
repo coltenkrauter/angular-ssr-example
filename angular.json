@@ -35,15 +35,15 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "prod": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.production.ts"
+                  "with": "src/environments/environment.prod.ts"
                 },
                 {
                   "replace": "src/robots.txt",
-                  "with": "src/robots/robots.production.txt"
+                  "with": "src/robots/robots.prod.txt"
                 }
               ],
               "optimization": true,
@@ -63,15 +63,15 @@
                 }
               ]
             },
-            "certification": {
+            "cert": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.certification.ts"
+                  "with": "src/environments/environment.cert.ts"
                 },
                 {
                   "replace": "src/robots.txt",
-                  "with": "src/robots/robots.certification.txt"
+                  "with": "src/robots/robots.cert.txt"
                 }
               ],
               "optimization": true,
@@ -91,15 +91,99 @@
                 }
               ]
             },
-            "development": {
+            "dev": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
+                  "with": "src/environments/environment.dev.ts"
                 },
                 {
                   "replace": "src/robots.txt",
-                  "with": "src/robots/robots.development.txt"
+                  "with": "src/robots/robots.dev.txt"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "prod-ssr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod-ssr.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.prod.txt"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "cert-ssr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.cert-ssr.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.cert.txt"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "dev-ssr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev-ssr.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.dev.txt"
                 }
               ],
               "optimization": true,
@@ -124,17 +208,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-ssr-example:build"
+            "browserTarget": "angular-ssr-example:build",
+            "port": 4000,
+            "host": "0.0.0.0"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "angular-ssr-example:build:production"
+            "prod": {
+              "browserTarget": "angular-ssr-example:build:prod"
             },
-            "certification": {
-              "browserTarget": "angular-ssr-example:build:certification"
+            "cert": {
+              "browserTarget": "angular-ssr-example:build:cert"
             },
-            "development": {
-              "browserTarget": "angular-ssr-example:build:development"
+            "dev": {
+              "browserTarget": "angular-ssr-example:build:dev"
             }
           }
         },
@@ -183,14 +269,14 @@
             "devServerTarget": "angular-ssr-example:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "angular-ssr-example:serve:production"
+            "prod": {
+              "devServerTarget": "angular-ssr-example:serve:prod"
             },
-            "certification": {
-              "devServerTarget": "angular-ssr-example:serve:certification"
+            "cert": {
+              "devServerTarget": "angular-ssr-example:serve:cert"
             },
-            "development": {
-              "devServerTarget": "angular-ssr-example:serve:development"
+            "dev": {
+              "devServerTarget": "angular-ssr-example:serve:dev"
             }
           }
         },
@@ -202,15 +288,15 @@
             "tsConfig": "tsconfig.server.json"
           },
           "configurations": {
-            "production": {
+            "prod": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.production.ts"
+                  "with": "src/environments/environment.prod.ts"
                 },
                 {
                   "replace": "src/robots.txt",
-                  "with": "src/robots/robots.production.txt"
+                  "with": "src/robots/robots.prod.txt"
                 }
               ],
               "sourceMap": false,
@@ -219,15 +305,15 @@
                 "styles": true
               }
             },
-            "certification": {
+            "cert": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.certification.ts"
+                  "with": "src/environments/environment.cert.ts"
                 },
                 {
                   "replace": "src/robots.txt",
-                  "with": "src/robots/robots.certification.txt"
+                  "with": "src/robots/robots.cert.txt"
                 }
               ],
               "sourceMap": false,
@@ -236,15 +322,66 @@
                 "styles": true
               }
             },
-            "development": {
+            "dev": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
+                  "with": "src/environments/environment.dev.ts"
                 },
                 {
                   "replace": "src/robots.txt",
-                  "with": "src/robots/robots.development.txt"
+                  "with": "src/robots/robots.dev.txt"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            },
+            "prod-ssr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod-ssr.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.prod.txt"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            },
+            "cert-ssr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.cert-ssr.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.cert.txt"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            },
+            "dev-ssr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev-ssr.ts"
+                },
+                {
+                  "replace": "src/robots.txt",
+                  "with": "src/robots/robots.dev.txt"
                 }
               ],
               "sourceMap": false,

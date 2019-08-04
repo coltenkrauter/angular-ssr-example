@@ -3,7 +3,7 @@
 # STAGE 1: Build
 FROM node:12.5.0-alpine as builder
 
-ARG ENV
+ARG ENV=dev
 
 WORKDIR /tmp
 ADD package.json ./package.json
@@ -24,4 +24,4 @@ ADD nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD nginx -g "daemon off;"

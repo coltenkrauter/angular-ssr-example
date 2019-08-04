@@ -10,6 +10,18 @@
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "@app": ["src/app.module"],
+      "@appserver": ["src/app.server.module"],
+      "@core": ["src/core/core.module"],
+      "@router": ["src/app-routing.module"],
+      "@assets/*": ["src/assets/*"],
+      "@environments/*": ["src/environments/*"],
+      "@components/*": ["src/components/*"],
+      "@services/*": ["src/services/*"],
+      "@interceptors/*": ["src/interceptors/*"],
+      "@pipes/*": ["src/pipes/*"]
+    },
     "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
