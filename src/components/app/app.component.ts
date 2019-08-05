@@ -1,10 +1,8 @@
-import { Component, Inject, Optional } from "@angular/core";
+import { Component } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material';
 
 import { environment } from "@environments/environment";
-
-import { WINDOW } from "@ng-toolkit/universal";
 
 @Component({
   selector: "app-root",
@@ -15,26 +13,11 @@ export class AppComponent {
   env = environment;
   title: string = "Angular SSR Example";
   pageSpeedURL: string = `https://developers.google.com/speed/pagespeed/insights/?url=${this.env.baseURL}`;
-  window;
 
   constructor(
     private http: HttpClient,
     public snackBar: MatSnackBar,
-    @Optional() @Inject(WINDOW) private window1: Window
-  ) {
-    if (window1) {
-        this.window = window1;
-    } else {
-        this.window = window;
-    }
-    
-    console.log(this.window.URL);
-
-    //let test = document.createElement('audio');
-    //console.log(!!test.canPlayType)
-    //console.log(test)
-    //console.log("test")
-  }
+  ) {}
 
   async getPageSpeed() {
     try {
