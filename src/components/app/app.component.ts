@@ -1,8 +1,10 @@
-import { Component } from "@angular/core";
+import { Component, Inject } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material';
 
 import { environment } from "@environments/environment";
+
+import { WINDOW} from "@ng-toolkit/universal";
 
 @Component({
   selector: "app-root",
@@ -17,11 +19,14 @@ export class AppComponent {
   constructor(
     private http: HttpClient,
     public snackBar: MatSnackBar,
+    @Inject(WINDOW) private window: Window
   ) {
-    let test = document.createElement('audio');
-    console.log(!!test.canPlayType)
-    console.log(test)
-    console.log("test")
+    console.log(this.window.URL);
+
+    //let test = document.createElement('audio');
+    //console.log(!!test.canPlayType)
+    //console.log(test)
+    //console.log("test")
   }
 
   async getPageSpeed() {
