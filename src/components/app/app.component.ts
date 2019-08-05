@@ -17,7 +17,12 @@ export class AppComponent {
   constructor(
     private http: HttpClient,
     public snackBar: MatSnackBar,
-  ) {}
+  ) {
+    let test = document.createElement('audio');
+    console.log(!!test.canPlayType)
+    console.log(test)
+    console.log("test")
+  }
 
   async getPageSpeed() {
     try {
