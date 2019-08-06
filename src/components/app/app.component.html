@@ -11,7 +11,7 @@
 <mat-card class="card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>PageSpeed Insights Score</mat-card-title>
+    <mat-card-title>PageSpeed Insights (Mobile)</mat-card-title>
     <mat-card-subtitle></mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
@@ -25,7 +25,8 @@
       [label]="dialLabel" 
       [value]="pageSpeedScore" 
       [animated]="true" 
-      [animationDuration]=".3">
+      [animationDuration]=".3"
+      title="PageSpeed Insights score for mobile">
       Loading gauge...
     </mwl-gauge>
   </mat-card-content>
