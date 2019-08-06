@@ -11,18 +11,21 @@
 <mat-card class="card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>PageSpeed Insights Score</mat-card-title>
+    <mat-card-title>PageSpeed Insights (Mobile)</mat-card-title>
     <mat-card-subtitle></mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
+    <mat-progress-bar *ngIf="pageSpeedLoading" mode="indeterminate"></mat-progress-bar>
     <mwl-gauge 
-      [max]="55" 
-      [dialStartAngle]="180" 
-      [dialEndAngle]="0" 
-      label="dialLabel" 
-      [value]="99" 
+      *ngIf="!pageSpeedLoading"
+      [class]="gaugeClass"
+      [max]="100"
+      [dialStartAngle]="-90"
+      [dialEndAngle]="-90.001"
+      [value]="pageSpeedScore" 
       [animated]="true" 
-      [animationDuration]=".3">
+      [animationDuration]=".3"
+      title="PageSpeed Insights score for mobile">
       Loading gauge...
     </mwl-gauge>
   </mat-card-content>

@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css"
 @import "https://fonts.googleapis.com/css?family=Roboto:300,700"
-
+@import "https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
 body
   font-family: Roboto
   margin: 0
@@ -13,3 +13,62 @@ html
   // -moz-background-size: cover
   // -o-background-size: cover
   // background-size: cover
+
+/* Gauge */
+mwl-gauge
+  width: 150px
+  height: 150px
+  display: block
+  padding: 10px
+  margin: auto
+mwl-gauge > .gauge > .dial
+  stroke: rgb(244,244,244)
+  stroke-width: 6
+  fill: rgb(244,244,244)
+mwl-gauge > .gauge > .value
+  stroke: gray
+  stroke-width: 6
+  fill: rgba(0,0,0,0)
+  stroke-linecap: round
+mwl-gauge > .gauge > .value-text
+  fill: gray
+  font-family: "Roboto Mono", Verdana, monospace
+  font-weight: 300
+  font-size: 2em
+  transform: translateY(2px)
+
+/* Slow */
+$slow-background: #ffedec
+$slow-foreground: #ff4e42
+
+mwl-gauge.slow > .gauge > .dial
+  stroke: $slow-background
+  fill: $slow-background
+mwl-gauge.slow > .gauge > .value
+  stroke: $slow-foreground
+mwl-gauge.slow > .gauge > .value-text
+  fill: $slow-foreground
+
+/* Average */
+$average-background: #fff6e6
+$average-foreground: #ffa400
+
+mwl-gauge.average > .gauge > .dial
+  stroke: $average-background
+  fill: $average-background
+mwl-gauge.average > .gauge > .value
+  stroke: $average-foreground
+mwl-gauge.average > .gauge > .value-text
+  fill: $average-foreground
+
+/* Fast */
+$fast-background: #e7faf0
+$fast-foreground: #0cce6b
+
+mwl-gauge.fast > .gauge > .dial
+  stroke: $fast-background
+  fill: $fast-background
+mwl-gauge.fast > .gauge > .value
+  stroke: $fast-foreground
+mwl-gauge.fast > .gauge > .value-text
+  fill: $fast-foreground

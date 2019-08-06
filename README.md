@@ -1,6 +1,6 @@
 # angular-ssr-example
 
-A simple example of a Dockerized Angular app which uses Angular Universal for server-side rendering.
+A simple example of a Dockerized Angular app that uses Angular Universal for server-side rendering.
 
 # Quick start
 
