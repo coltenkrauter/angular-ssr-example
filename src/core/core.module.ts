@@ -10,7 +10,8 @@ import {
   MatBadgeModule, MatButtonModule, MatCardModule, MatCheckboxModule, MatRippleModule, MatTabsModule,
   MatDialogModule, MatDividerModule, MatExpansionModule, MatFormFieldModule, MatButtonToggleModule, 
   MatGridListModule, MatIconModule, MatInputModule, MatMenuModule, MatProgressSpinnerModule, MatSelectModule,
-  MatSnackBarModule, MatTableModule, MatToolbarModule, MatTooltipModule, MatSlideToggleModule, MatListModule, MatChipsModule
+  MatSnackBarModule, MatTableModule, MatToolbarModule, MatTooltipModule, MatSlideToggleModule, MatListModule, 
+  MatChipsModule, MatProgressBarModule
 } from '@angular/material';
 
 // https://github.com/FortAwesome/angular-fontawesome
@@ -25,7 +26,7 @@ let modules = [
   MatDividerModule, MatExpansionModule, MatFormFieldModule, MatButtonToggleModule, MatGridListModule,
   MatIconModule, MatInputModule, MatMenuModule, MatProgressSpinnerModule, MatSelectModule,
   MatSnackBarModule, MatTableModule, MatToolbarModule, MatTooltipModule, MatSlideToggleModule, MatListModule,
-  ReactiveFormsModule, RouterModule, MatChipsModule
+  ReactiveFormsModule, RouterModule, MatChipsModule, MatProgressBarModule
 ];
 
 @NgModule({

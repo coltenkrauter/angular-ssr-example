@@ -15,12 +15,15 @@
     <mat-card-subtitle></mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
+    <mat-progress-bar *ngIf="pageSpeedLoading" mode="indeterminate"></mat-progress-bar>
     <mwl-gauge 
-      [max]="55" 
-      [dialStartAngle]="180" 
-      [dialEndAngle]="0" 
-      label="dialLabel" 
-      [value]="99" 
+      *ngIf="!pageSpeedLoading"
+      [class]="gaugeClass"
+      [max]="100"
+      [dialStartAngle]="-90"
+      [dialEndAngle]="-90.001"
+      [label]="dialLabel" 
+      [value]="pageSpeedScore" 
       [animated]="true" 
       [animationDuration]=".3">
       Loading gauge...
