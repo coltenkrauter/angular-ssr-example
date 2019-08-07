@@ -9,13 +9,8 @@
 </mat-toolbar>
 
 <mat-card class="card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>PageSpeed Insights (Mobile)</mat-card-title>
-    <mat-card-subtitle></mat-card-subtitle>
-  </mat-card-header>
   <mat-card-content>
-    <mat-progress-bar *ngIf="pageSpeedLoading" mode="indeterminate"></mat-progress-bar>
+    <mat-progress-bar *ngIf="pageSpeedLoading && pageSpeedClicked" mode="indeterminate"></mat-progress-bar>
     <mwl-gauge 
       *ngIf="!pageSpeedLoading"
       [class]="gaugeClass"
@@ -34,6 +29,11 @@
       class="card--button"
       [href]="env.linkURL">
       {{ env.linkText }}
+    </a>
+    <a mat-button
+      class="card--button"
+      (click)="getPageSpeed()">
+      Get PageSpeed Insights Score
     </a>
     <a mat-button
       class="card--button"
