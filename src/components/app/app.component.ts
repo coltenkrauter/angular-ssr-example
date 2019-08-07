@@ -14,17 +14,17 @@ export class AppComponent {
   title: string = "Angular SSR Example";
   pageSpeedURL: string = `https://developers.google.com/speed/pagespeed/insights/?url=${this.env.baseURL}`;
   pageSpeedScore: number = 0;
+  pageSpeedClicked = false;
   pageSpeedLoading = true;
   gaugeClass: string = "slow";
 
   constructor(
     private http: HttpClient,
     public snack: MatSnackBar,
-  ) {
-    this.getPageSpeed();
-  }
+  ) {}
 
   async getPageSpeed() {
+    this.pageSpeedClicked = true;
     try {
       let pageSpeedAPIURL: string = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${this.env.baseURL}&strategy=mobile`;
       let response = await this.http.get<any>(pageSpeedAPIURL).toPromise();
